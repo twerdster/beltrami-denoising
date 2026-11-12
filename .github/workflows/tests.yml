@@ -16,3 +16,9 @@ jobs:
       - run: beltrami demo --output results/demo
       - run: beltrami-deep --help
       - run: beltrami-points --help
+
+  ios-build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - run: ios/scripts/build_ios.sh

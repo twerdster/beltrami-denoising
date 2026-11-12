@@ -1,0 +1,913 @@
+{
+  "compute": "gpu",
+  "low_power_mode": false,
+  "os_version": "18.0.1",
+  "platform": "physical iOS device",
+  "precision": "fp32",
+  "records": [
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 100,
+      "channels": 1,
+      "cold_ms": 1.6011666739359498,
+      "finite": true,
+      "gpu_ms": [
+        0.04941667430102825,
+        0.049958296585828066,
+        0.04937499761581421
+      ],
+      "height": 1,
+      "id": "singleton_gray",
+      "iterations": 4,
+      "max_absolute_error": 0,
+      "median_ms": 0.3955416614189744,
+      "output_file": "singleton_gray-fp32-gpu.f32",
+      "radius": 0,
+      "rms_error": 0,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.04937499761581421,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 0.3578333416953683,
+        "workspaceBytes": 80
+      },
+      "warm_ms": [
+        0.4480000352486968,
+        0.3955416614189744,
+        0.3578333416953683
+      ],
+      "width": 1
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 0.5059583345428109,
+      "finite": true,
+      "gpu_ms": [
+        0.45533332740888,
+        0.12212502770125866,
+        2.274583326652646
+      ],
+      "height": 1,
+      "id": "singleton_rgb",
+      "iterations": 4,
+      "max_absolute_error": 0,
+      "median_ms": 0.6707917200401425,
+      "output_file": "singleton_rgb-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 0,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 2.274583326652646,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 2.8988333069719374,
+        "workspaceBytes": 96
+      },
+      "warm_ms": [
+        0.6707917200401425,
+        0.2948750043287873,
+        2.8988333069719374
+      ],
+      "width": 1
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 0.6328333402052522,
+      "finite": true,
+      "gpu_ms": [
+        0.19162503303959966,
+        0.19370834343135357,
+        0.19183330005034804
+      ],
+      "height": 1,
+      "id": "one_row",
+      "iterations": 7,
+      "max_absolute_error": 0,
+      "median_ms": 0.5577083211392164,
+      "output_file": "one_row-fp32-gpu.f32",
+      "radius": 2,
+      "rms_error": 0,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.19183330005034804,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 0.5218750447966158,
+        "workspaceBytes": 1632
+      },
+      "warm_ms": [
+        0.60374999884516,
+        0.5577083211392164,
+        0.5218750447966158
+      ],
+      "width": 17
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 0.6482916651293635,
+      "finite": true,
+      "gpu_ms": [
+        0.20599999697878957,
+        3.238000033888966,
+        0.2044999855570495
+      ],
+      "height": 19,
+      "id": "one_column",
+      "iterations": 7,
+      "max_absolute_error": 7.62939453125e-06,
+      "median_ms": 0.549458316527307,
+      "output_file": "one_column-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 1.1298158221418236e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.2044999855570495,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 0.549458316527307,
+        "workspaceBytes": 1824
+      },
+      "warm_ms": [
+        0.5341666401363909,
+        3.6808750010095537,
+        0.549458316527307
+      ],
+      "width": 1
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 0.5246250075288117,
+      "finite": true,
+      "gpu_ms": [
+        0.14937500236555934,
+        0.1519166980870068,
+        0.15220831846818328
+      ],
+      "height": 2,
+      "id": "small_rgb",
+      "iterations": 5,
+      "max_absolute_error": 0,
+      "median_ms": 0.48370828153565526,
+      "output_file": "small_rgb-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 0,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.15220831846818328,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 0.48625003546476364,
+        "workspaceBytes": 1824
+      },
+      "warm_ms": [
+        0.47345837811008096,
+        0.48370828153565526,
+        0.48625003546476364
+      ],
+      "width": 3
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 0.5091666243970394,
+      "finite": true,
+      "gpu_ms": [
+        0.14224997721612453,
+        0.1449999981559813,
+        0.14504167484119534
+      ],
+      "height": 3,
+      "id": "small_gray",
+      "iterations": 5,
+      "max_absolute_error": 1.52587890625e-05,
+      "median_ms": 0.47099997755140066,
+      "output_file": "small_gray-fp32-gpu.f32",
+      "radius": 2,
+      "rms_error": 8.809665972742092e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.14504167484119534,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 0.479916634503752,
+        "workspaceBytes": 1824
+      },
+      "warm_ms": [
+        0.4693749942816794,
+        0.47099997755140066,
+        0.479916634503752
+      ],
+      "width": 2
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 100,
+      "channels": 1,
+      "cold_ms": 2.8272916679270566,
+      "finite": true,
+      "gpu_ms": [
+        0.15462498413398862,
+        0.1486249966546893,
+        0.14916667714715004
+      ],
+      "height": 17,
+      "id": "local_gray",
+      "iterations": 10,
+      "max_absolute_error": 3.0517578125e-05,
+      "median_ms": 0.47429167898371816,
+      "output_file": "local_gray-fp32-gpu.f32",
+      "radius": 0,
+      "rms_error": 5.051946863443051e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.14916667714715004,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 0.47429167898371816,
+        "workspaceBytes": 25840
+      },
+      "warm_ms": [
+        0.521958339959383,
+        0.4697083495557308,
+        0.47429167898371816
+      ],
+      "width": 19
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 100,
+      "channels": 3,
+      "cold_ms": 0.5351666477508843,
+      "finite": true,
+      "gpu_ms": [
+        0.1496666227467358,
+        0.1558333169668913,
+        0.15124998753890395
+      ],
+      "height": 19,
+      "id": "local_rgb",
+      "iterations": 10,
+      "max_absolute_error": 3.0517578125e-05,
+      "median_ms": 0.4835000145249069,
+      "output_file": "local_rgb-fp32-gpu.f32",
+      "radius": 0,
+      "rms_error": 5.091181562762882e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.15124998753890395,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 0.4835000145249069,
+        "workspaceBytes": 25840
+      },
+      "warm_ms": [
+        0.5225000204518437,
+        0.47841668128967285,
+        0.4835000145249069
+      ],
+      "width": 17
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 1.1246666545048356,
+      "finite": true,
+      "gpu_ms": [
+        0.671083340421319,
+        0.6697499775327742,
+        3.330750041641295
+      ],
+      "height": 29,
+      "id": "odd_gray",
+      "iterations": 20,
+      "max_absolute_error": 2.288818359375e-05,
+      "median_ms": 1.0744166793301702,
+      "output_file": "odd_gray-fp32-gpu.f32",
+      "radius": 2,
+      "rms_error": 5.230263685105041e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 3.330750041641295,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 4.13412501802668,
+        "workspaceBytes": 86304
+      },
+      "warm_ms": [
+        1.054666645359248,
+        1.0744166793301702,
+        4.13412501802668
+      ],
+      "width": 31
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 1.1093333014287055,
+      "finite": true,
+      "gpu_ms": [
+        0.7018750184215605,
+        0.7005416555330157,
+        0.7046666578389704
+      ],
+      "height": 31,
+      "id": "odd_rgb",
+      "iterations": 20,
+      "max_absolute_error": 1.52587890625e-05,
+      "median_ms": 1.1177916312590241,
+      "output_file": "odd_rgb-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 1.5653350516451177e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.7046666578389704,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 1.1177916312590241,
+        "workspaceBytes": 86304
+      },
+      "warm_ms": [
+        1.1877499637193978,
+        1.0723333107307553,
+        1.1177916312590241
+      ],
+      "width": 29
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 12.34170829411596,
+      "finite": true,
+      "gpu_ms": [
+        11.657666706014425,
+        8.744749997276813,
+        10.871749953366816
+      ],
+      "height": 63,
+      "id": "long_gray",
+      "iterations": 150,
+      "max_absolute_error": 1.52587890625e-05,
+      "median_ms": 11.490500008221716,
+      "output_file": "long_gray-fp32-gpu.f32",
+      "radius": 2,
+      "rms_error": 3.1700990176398877e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 10.871749953366816,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 11.490500008221716,
+        "workspaceBytes": 393120
+      },
+      "warm_ms": [
+        12.34812499023974,
+        9.411375038325787,
+        11.490500008221716
+      ],
+      "width": 65
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 2.640958351548761,
+      "finite": true,
+      "gpu_ms": [
+        4.668625013437122,
+        1.9617083598859608,
+        1.9490833510644734
+      ],
+      "height": 65,
+      "id": "long_rgb",
+      "iterations": 30,
+      "max_absolute_error": 3.0517578125e-05,
+      "median_ms": 2.5353750097565353,
+      "output_file": "long_rgb-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 2.1300686677293133e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 1.9490833510644734,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 2.5353750097565353,
+        "workspaceBytes": 418080
+      },
+      "warm_ms": [
+        5.4333333391696215,
+        2.4100416339933872,
+        2.5353750097565353
+      ],
+      "width": 67
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 2.2819999721832573,
+      "finite": true,
+      "gpu_ms": [
+        2.9780000331811607,
+        0.9738750522956252,
+        0.9762500412762165
+      ],
+      "height": 37,
+      "id": "constant_gray",
+      "iterations": 25,
+      "max_absolute_error": 0,
+      "median_ms": 1.431124983355403,
+      "output_file": "constant_gray-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 0,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 0.9762500412762165,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 1.431124983355403,
+        "workspaceBytes": 418080
+      },
+      "warm_ms": [
+        3.243874991312623,
+        1.3672499917447567,
+        1.431124983355403
+      ],
+      "width": 43
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 1.4682083274237812,
+      "finite": true,
+      "gpu_ms": [
+        0.972916663158685,
+        0.9748750017024577,
+        4.069874994456768
+      ],
+      "height": 37,
+      "id": "constant_rgb",
+      "iterations": 25,
+      "max_absolute_error": 0,
+      "median_ms": 1.4047499862499535,
+      "output_file": "constant_rgb-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 0,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 4.069874994456768,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 4.456958326045424,
+        "workspaceBytes": 418080
+      },
+      "warm_ms": [
+        1.395041705109179,
+        1.4047499862499535,
+        4.456958326045424
+      ],
+      "width": 43
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 21.918416663538665,
+      "finite": true,
+      "gpu_ms": [
+        8.603458118159324,
+        5.5873331730253994,
+        8.203833014704287
+      ],
+      "height": 41,
+      "id": "tile_gray",
+      "iterations": 7,
+      "max_absolute_error": 1.52587890625e-05,
+      "median_ms": 27.27812499506399,
+      "output_file": "tile_gray-fp32-gpu.f32",
+      "radius": 2,
+      "rms_error": 2.5296427139122356e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 8.203833014704287,
+        "precision": "float32",
+        "tileCount": 45,
+        "wallMilliseconds": 27.891708363313228,
+        "workspaceBytes": 64896
+      },
+      "warm_ms": [
+        27.27812499506399,
+        23.95587501814589,
+        27.891708363313228
+      ],
+      "width": 43
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 43.011375004425645,
+      "finite": true,
+      "gpu_ms": [
+        5.3619168465957046,
+        4.067875095643103,
+        3.949166741222143
+      ],
+      "height": 41,
+      "id": "tile_rgb",
+      "iterations": 7,
+      "max_absolute_error": 1.52587890625e-05,
+      "median_ms": 33.240458345972,
+      "output_file": "tile_rgb-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 8.843951055735403e-07,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 3.949166741222143,
+        "precision": "float32",
+        "tileCount": 63,
+        "wallMilliseconds": 28.967166668735445,
+        "workspaceBytes": 64896
+      },
+      "warm_ms": [
+        36.164875025860965,
+        33.240458345972,
+        28.967166668735445
+      ],
+      "width": 43
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 2.299833344295621,
+      "finite": true,
+      "gpu_ms": [
+        1.6761249862611294,
+        1.8371666665188968,
+        1.6759583377279341
+      ],
+      "height": 127,
+      "id": "nonsquare_gray",
+      "iterations": 10,
+      "max_absolute_error": 3.0517578125e-05,
+      "median_ms": 2.2047083475627005,
+      "output_file": "nonsquare_gray-fp32-gpu.f32",
+      "radius": 2,
+      "rms_error": 2.982541310733056e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 1.6759583377279341,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 2.2047083475627005,
+        "workspaceBytes": 1572768
+      },
+      "warm_ms": [
+        2.1788333542644978,
+        2.5617083301767707,
+        2.2047083475627005
+      ],
+      "width": 129
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 2.3052917094901204,
+      "finite": true,
+      "gpu_ms": [
+        1.8648749683052301,
+        1.7437500064261258,
+        1.7564166919328272
+      ],
+      "height": 129,
+      "id": "nonsquare_rgb",
+      "iterations": 10,
+      "max_absolute_error": 1.52587890625e-05,
+      "median_ms": 2.352791663724929,
+      "output_file": "nonsquare_rgb-fp32-gpu.f32",
+      "radius": 3,
+      "rms_error": 1.2196545385221403e-06,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 1.7564166919328272,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 2.352791663724929,
+        "workspaceBytes": 1572768
+      },
+      "warm_ms": [
+        2.5152499438263476,
+        2.1755416528321803,
+        2.352791663724929
+      ],
+      "width": 127
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 6.875874998513609,
+      "finite": true,
+      "gpu_ms": [
+        6.161541678011417,
+        6.165875005535781,
+        6.338750012218952
+      ],
+      "height": 128,
+      "id": "performance-128x128c1",
+      "iterations": 40,
+      "median_ms": 7.014041708316654,
+      "output_file": "performance-128x128c1-fp32-gpu.f32",
+      "radius": 2,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 6.338750012218952,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 7.16091669164598,
+        "workspaceBytes": 1572864
+      },
+      "warm_ms": [
+        6.78987504215911,
+        7.014041708316654,
+        7.16091669164598
+      ],
+      "width": 128
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 23.269750003237277,
+      "finite": true,
+      "gpu_ms": [
+        20.464583300054073,
+        12.113124947063625,
+        14.07187501899898
+      ],
+      "height": 256,
+      "id": "performance-256x256c1",
+      "iterations": 40,
+      "median_ms": 16.438000020571053,
+      "output_file": "performance-256x256c1-fp32-gpu.f32",
+      "radius": 2,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 14.07187501899898,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 16.438000020571053,
+        "workspaceBytes": 6291456
+      },
+      "warm_ms": [
+        21.715416689403355,
+        13.864000036846846,
+        16.438000020571053
+      ],
+      "width": 256
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 30.799750005826354,
+      "finite": true,
+      "gpu_ms": [
+        20.6376250134781,
+        22.82237500185147,
+        22.72887498838827
+      ],
+      "height": 257,
+      "id": "performance-385x257c1",
+      "iterations": 40,
+      "median_ms": 26.68970834929496,
+      "output_file": "performance-385x257c1-fp32-gpu.f32",
+      "radius": 2,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 22.72887498838827,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 26.714500039815903,
+        "workspaceBytes": 9498720
+      },
+      "warm_ms": [
+        23.83000002009794,
+        26.68970834929496,
+        26.714500039815903
+      ],
+      "width": 385
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 72.93741666944697,
+      "finite": true,
+      "gpu_ms": [
+        57.80287500238046,
+        56.92104168701917,
+        60.807833331637084
+      ],
+      "height": 512,
+      "id": "performance-512x512c1",
+      "iterations": 40,
+      "median_ms": 65.27154165087268,
+      "output_file": "performance-512x512c1-fp32-gpu.f32",
+      "radius": 2,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 60.807833331637084,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 68.6508750077337,
+        "workspaceBytes": 25165824
+      },
+      "warm_ms": [
+        65.27154165087268,
+        65.02791668754071,
+        68.6508750077337
+      ],
+      "width": 512
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 262.4603749718517,
+      "finite": true,
+      "gpu_ms": [
+        235.42008333606645,
+        227.454416686669,
+        230.2998750237748
+      ],
+      "height": 768,
+      "id": "performance-1024x768c1",
+      "iterations": 40,
+      "median_ms": 246.27216666704044,
+      "output_file": "performance-1024x768c1-fp32-gpu.f32",
+      "radius": 2,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 230.2998750237748,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 246.27216666704044,
+        "workspaceBytes": 75497472
+      },
+      "warm_ms": [
+        252.64483329374343,
+        241.18470831308514,
+        246.27216666704044
+      ],
+      "width": 1024
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 3,
+      "cold_ms": 7.762124994769692,
+      "finite": true,
+      "gpu_ms": [
+        6.045375019311905,
+        6.1131250113248825,
+        6.0783749795518816
+      ],
+      "height": 193,
+      "id": "performance-257x193c3",
+      "iterations": 40,
+      "median_ms": 7.837333308998495,
+      "output_file": "performance-257x193c3-fp32-gpu.f32",
+      "radius": 2,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 6.0783749795518816,
+        "precision": "float32",
+        "tileCount": 1,
+        "wallMilliseconds": 8.173833310138434,
+        "workspaceBytes": 75497472
+      },
+      "warm_ms": [
+        7.837333308998495,
+        7.762374996673316,
+        8.173833310138434
+      ],
+      "width": 257
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 1160.7271250104532,
+      "finite": true,
+      "gpu_ms": [
+        945.8089167019352,
+        966.8248749221675,
+        945.7252499996684
+      ],
+      "height": 1536,
+      "id": "performance-2048x1536c1",
+      "iterations": 40,
+      "median_ms": 1132.3991667013615,
+      "output_file": "performance-2048x1536c1-fp32-gpu.f32",
+      "radius": 2,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 945.7252499996684,
+        "precision": "float32",
+        "tileCount": 12,
+        "wallMilliseconds": 1134.609583299607,
+        "workspaceBytes": 201283584
+      },
+      "warm_ms": [
+        1132.3991667013615,
+        1128.2824999652803,
+        1134.609583299607
+      ],
+      "width": 2048
+    },
+    {
+      "alpha": 0.20999999344348907,
+      "beta": 800,
+      "channels": 1,
+      "cold_ms": 594.2485833656974,
+      "finite": true,
+      "gpu_ms": [
+        443.7197500374168,
+        446.45508332177997,
+        447.97404162818566
+      ],
+      "height": 3024,
+      "id": "performance-4032x3024c1",
+      "iterations": 5,
+      "median_ms": 637.6828333595768,
+      "output_file": "performance-4032x3024c1-fp32-gpu.f32",
+      "radius": 2,
+      "sigma": 25,
+      "statistics": {
+        "backend": "Metal",
+        "gpuMilliseconds": 447.97404162818566,
+        "precision": "float32",
+        "tileCount": 9,
+        "wallMilliseconds": 641.8891666689888,
+        "workspaceBytes": 201283584
+      },
+      "warm_ms": [
+        637.6828333595768,
+        635.3868750156835,
+        641.8891666689888
+      ],
+      "width": 4032
+    }
+  ],
+  "schema": 1,
+  "thermal_current": 0,
+  "thermal_start": 0,
+  "hardware": {
+    "model": "iPhone 12",
+    "soc": "A14 Bionic"
+  },
+  "build": "Release, Xcode 16.1, iOS SDK 18.1",
+  "timing_scope": "Engine wall time: packing, prediction/GPU completion and stitch/readback; excludes model initialization, photo decode, UI display and diagnostic compute-plan inspection.",
+  "measurement_limit": "Three warmed repetitions after one cold inference; not a sustained-throughput or tail-latency study."
+}

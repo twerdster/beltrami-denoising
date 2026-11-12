@@ -72,3 +72,27 @@ checkout. Confirm package resources load from the installed distribution.
 Check the three Python CI jobs, public repository visibility and an anonymous
 clone. Validate public asset downloads with a fresh cache; a local asset-dir
 test alone does not verify the published download path.
+
+## Native iOS workflow
+
+Read `ios/README.md` and `ios/VALIDATION.md` before changing native behavior.
+Build with `ios/scripts/build_ios.sh` (unsigned), or set `TEAM_ID` to sign
+using an existing Apple development account. Do not commit local signing
+settings, device identifiers, generated fixtures/models, caches or builds.
+Use Release builds on a physical phone for latency evidence; keep sample
+counts, thermal state, precision and processed dimensions with the results.
+
+Run `--check-image-io` on the phone after image-adapter changes. It must
+pass all16 orientation/scale checks. `--validate` must contain the expected
+reference cases and pass declared finite/error gates; an empty suite fails.
+Use `--benchmark`, `--case` and `--repeats` for controlled timings. Preserve
+reports before another invocation replaces the same Documents filename.
+`--auto-run --screenshot` exports only the procedural demo and an app-view
+capture for documentation. Imported photos are shared only on user action.
+
+Generate18 references with `python ios/scripts/prepare_fixtures.py` or
+`ios/scripts/build_ios.sh --fixtures`. Run `ios/Tests/run_mac_validation.sh`
+for full-frame/forced-tile numerical controls. Preserve unnormalized sums,
+replicated derivatives, zero patch boundaries and exact temporal halos.
+The historical double-precision Python scores are separate from float32
+Metal fidelity; do not transfer their table claim without rerunning it.

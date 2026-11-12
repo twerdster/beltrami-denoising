@@ -1,11 +1,38 @@
 # Beltrami denoising
 
+![Patch-Beltrami running on an iPhone 12](docs/images/ios-demo.png)
+
 Python implementations and reproducible experiments for **Efficient Beltrami
 Flow in Patch-Space** and the **Deep Patch-Beltrami** models from Aaron Wetzler's
 2017 PhD thesis. Runs on Linux with NumPy/SciPy; neural inference uses PyTorch.
 MATLAB and Caffe are not required.
 
 ![Patch-Beltrami denoising of a procedural image](docs/images/denoising-demo.png)
+
+## iPhone app
+
+A native SwiftUI app processes grayscale and RGB images with optimized Metal
+kernels, full-resolution photo import and a draggable before/after view.
+On the tested **iPhone 12**, 256×256 grayscale / 40 iterations took **16.44 ms**
+(median of three warm runs). Exact tiling supports larger images within a
+192 MiB GPU workspace budget; a 4032×3024 grayscale check completed without
+resizing. Latency depends on image size and iteration count.
+
+Open `ios/BeltramiApp.xcodeproj` in **Xcode 16.1+**, choose your Apple signing
+team and an **iOS 18+** iPhone, then Run. No model downloads are needed.
+
+```bash
+# Optional command-line Release build; use your Apple development team.
+TEAM_ID=YOUR_TEAM_ID ios/scripts/build_ios.sh
+```
+
+[Installation, controls and measured performance](ios/README.md) ·
+[Numerical validation](ios/VALIDATION.md) ·
+[Device benchmark record](ios/benchmarks/iphone12.json)
+
+The screenshot and images above come from the app on a physical iPhone and a
+procedural sample. The Metal port is float32; the historical paper's
+separate double-precision reproduction remains available below.
 
 ## Quick start
 

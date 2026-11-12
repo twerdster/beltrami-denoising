@@ -1,0 +1,19 @@
+{
+  "beta": 800,
+  "channels": 1,
+  "denoised_psnr_db": 36.09146974286317,
+  "height": 320,
+  "iterations": 40,
+  "noisy_psnr_db": 20.179916378618103,
+  "radius": 2,
+  "sigma": 25,
+  "statistics": {
+    "backend": "Metal",
+    "gpuMilliseconds": 43.96412498317659,
+    "precision": "float32",
+    "tileCount": 1,
+    "wallMilliseconds": 45.595916686579585,
+    "workspaceBytes": 11796480
+  },
+  "width": 384
+}

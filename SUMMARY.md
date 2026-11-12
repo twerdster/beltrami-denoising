@@ -2,7 +2,7 @@
 
 `beltrami-denoising` provides a Python package, `beltrami`, and command-line
 tools for the Beltrami and Patch-Beltrami research of Aaron Wetzler and
-collaborators. Package version: 1.0.0. The MIT license covers the repository's
+collaborators. Package version: 1.1.0. The MIT license covers the repository's
 code; external photographs, data and models retain their separate terms.
 
 ## Classical image experiments
@@ -84,3 +84,30 @@ described in the main README and their component documentation.
   3.10, 3.12 and 3.13. Deep inference is verified separately with release
   assets rather than requiring model downloads in each CI job.
 - All three GitHub Actions Python jobs passed for the initial public release.
+
+## Native iOS release 1.1.0
+
+- `ios/BeltramiApp.xcodeproj` builds the SwiftUI app for iOS 18+ with Xcode
+  16.1+. A procedural sample, full-resolution upright RGB photo import,
+  before/after comparison and sharing are provided. Imported photos are not
+  automatically written to the diagnostic output folder.
+- `ios/BeltramiMetal/` contains the reusable float32 Metal engine and kernels.
+  Radius-zero flow skips patch sums. Reused buffers, threadgroup patch sums
+  and one command-buffer sequence avoid per-iteration CPU synchronization.
+- Arbitrary positive grayscale/RGB dimensions are supported subject to
+  available memory. A 192 MiB GPU workspace budget triggers exact spatial
+  and temporal tiling; CPU pixel arrays and previews require extra memory.
+- Eighteen Python float32 references passed on the physical iPhone 12/A14,
+  including forced tiling and singleton/odd dimensions. Worst absolute
+  error was 3.05176e-5. Mac forced-tile/full-frame comparisons were bit-identical.
+- A 26-case physical-device benchmark includes 2048x1536 at40 iterations and
+  4032x3024 at5 iterations without resizing. Warm three-run medians, thermal
+  state, work parameters and errors are recorded in `ios/benchmarks/`.
+- The UI image adapter checks all eight orientations at two UIImage scales,
+  including corner/channel order and preview round trips, on the phone.
+- `ios/README.md` documents signing, installation, fixtures, API, timing and
+  memory. The root README starts with an actual device demo. The historical
+  double-precision paper protocol remains separate from native float32 checks.
+- GitHub Actions includes an unsigned Release iOS compilation job. No
+  development team, device identifier, generated fixtures or build binaries
+  are committed. Source code and procedural demos are MIT licensed.

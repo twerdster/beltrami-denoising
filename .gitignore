@@ -10,3 +10,9 @@ __pycache__/
 /results/
 /deep-reproduction.json
 *.partial-*
+
+/.build-ios/
+/ios/**/*.xcuserstate
+/ios/**/xcuserdata/
+/ios/BeltramiApp/Fixtures/*
+!/ios/BeltramiApp/Fixtures/.gitkeep
