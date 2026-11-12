@@ -28,6 +28,8 @@ code; external photographs, data and models retain their separate terms.
   1.0.0 wheel, loaded its packaged numeric resources and ran the installed
   demo. Core, SSVM and six point-cloud tests passed with Python 3.13.5,
   NumPy 2.5.4, SciPy 1.18.1 and Pillow 13.0.0.
+- Final isolated-wheel validation passed all 24 tests, including the Deep
+  protobuf reader, atomic download-integrity check and pinned manifests.
 
 ```bash
 pip install -e '.[test]'
@@ -81,3 +83,4 @@ described in the main README and their component documentation.
 - GitHub Actions runs the core tests and CLI smoke checks on Python
   3.10, 3.12 and 3.13. Deep inference is verified separately with release
   assets rather than requiring model downloads in each CI job.
+- All three GitHub Actions Python jobs passed for the initial public release.

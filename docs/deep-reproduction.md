@@ -79,7 +79,8 @@ Released noise levels are 5, 10, 15, 20, 25, 30, 40 and 50. Grayscale inputs use
 the historical intensity offset for that noise level. RGB inputs apply the
 grayscale network separately to each channel without an intensity offset, as in
 the recovered color wrapper. This is a historical model, not a modern denoising
-performance claim.
+performance claim. Non-finite outputs are rejected; the implementation does not
+clamp learned determinants or substitute another filter.
 
 ## Model and protocol details
 

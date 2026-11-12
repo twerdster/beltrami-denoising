@@ -65,3 +65,10 @@ Before public releases, inspect the tracked tree and assets for unintended
 private data, absolute machine paths and external materials. Keep attribution,
 license boundaries, command examples and result claims synchronized. No
 training is needed to reproduce the released inference results.
+
+For release verification, build and install a wheel into an isolated virtual
+environment, unset `PYTHONPATH`, and run all tests from outside the source
+checkout. Confirm package resources load from the installed distribution.
+Check the three Python CI jobs, public repository visibility and an anonymous
+clone. Validate public asset downloads with a fresh cache; a local asset-dir
+test alone does not verify the published download path.
