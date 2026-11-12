@@ -96,3 +96,10 @@ for full-frame/forced-tile numerical controls. Preserve unnormalized sums,
 replicated derivatives, zero patch boundaries and exact temporal halos.
 The historical double-precision Python scores are separate from float32
 Metal fidelity; do not transfer their table claim without rerunning it.
+
+## README presentation (2026-11-12)
+
+The README adds factual language, platform and existing-license badges while
+preserving the original demonstration figures and all runtime, reproduction,
+validation and attribution details. Keep badge claims aligned with these docs;
+a presentation-only update does not establish a new build or runtime result.

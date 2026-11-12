@@ -111,3 +111,10 @@ described in the main README and their component documentation.
 - GitHub Actions includes an unsigned Release iOS compilation job. No
   development team, device identifier, generated fixtures or build binaries
   are committed. Source code and procedural demos are MIT licensed.
+
+## README presentation (2026-11-12)
+
+The README adds factual language, platform and existing-license badges while
+preserving the original demonstration figures and all runtime, reproduction,
+validation and attribution details. Keep badge claims aligned with these docs;
+a presentation-only update does not establish a new build or runtime result.
