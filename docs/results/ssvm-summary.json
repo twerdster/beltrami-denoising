@@ -1,0 +1,53 @@
+{
+  "paper": "Efficient Beltrami Flow in Patch-Space (SSVM 2011)",
+  "paper_url": "https://www.cs.technion.ac.il/wp-content/ron-kimmel/papers/Conference/WetKim_SSVM2011.pdf",
+  "protocol": {
+    "input_scale": "0..255",
+    "input_clipping": "0..255",
+    "output_clipping": "none",
+    "precision": "float64",
+    "noise": {
+      "file": "legacy_noise.npz",
+      "sha256": "164adc9360c09bb415b5f2bd183f962c047ecb62ea9b46a183ceb73af782e7d2",
+      "array_sha256": "9ac9dce3eaf2e736474ebb906fdb74bba0e2273d7a79fd1b3734b3c7a843d143",
+      "count": 786432,
+      "dtype": "float64",
+      "provenance": "Recovered MATLAB legacy seed 0 standard-normal sequence from preserved float32 noisy/clean pairs; (noisy-clean)/5. Contains Gaussian perturbations only, not image pixels.",
+      "limitation": "Recovery retains float32 quantization uncertainty; not bit-exact historical double-precision random numbers."
+    },
+    "parameter_source": {
+      "prsm1.mat": {
+        "sha256": "8be2a8f1f4adf7e8e111eb040c4f258b3000153dbd0cd0bdca7d208679198864",
+        "role": "patch Table 3 shared betas"
+      },
+      "prsm2.mat": {
+        "sha256": "89c35ec2d6106a36816a4fd348a98592629c46bebcc16ddd521382e3e67e4907",
+        "role": "regular Table 3 shared betas"
+      },
+      "paramsFor10ItersColor.mat": {
+        "sha256": "0d3935c8ad97790c39f1fade89d13678c940f318322f92f0d6578b9dceb193ff",
+        "role": "color beta and alpha"
+      }
+    },
+    "table1_fitting": "oracle beta optimization against clean reference per cell",
+    "table3_color_fitting": "none; historical shared parameters"
+  },
+  "experiments": {
+    "table1": {
+      "cases": 20,
+      "matches": 20,
+      "max_absolute_difference_db": 0.004390918298749824
+    },
+    "table3": {
+      "cases": 36,
+      "matches": 36,
+      "max_absolute_difference_db": 0.004822978490874874
+    },
+    "color": {
+      "cases": 3,
+      "matches": 3,
+      "max_absolute_difference_db": 0.003911442909380725
+    }
+  },
+  "passed": true
+}

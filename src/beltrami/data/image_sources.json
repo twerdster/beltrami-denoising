@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Cameraman256",
+    "url": "https://webpages.tuni.fi/foi/GCF-BM3D/images/Cameraman256.png",
+    "file_sha256": "0da05a64c5090d4f49a021e884451788a5ae0b7ecf3b565be8afd5bf1cc1c2e2",
+    "pixels_sha256": "9894a7154efd51682454b4015ee02a0a5b88514d6cbac465b8409081993ba10e",
+    "shape": [
+      256,
+      256
+    ]
+  },
+  {
+    "name": "Lena512",
+    "url": "https://webpages.tuni.fi/foi/GCF-BM3D/images/Lena512.png",
+    "file_sha256": "614176830c78cf7ef2c6119f9750877abe96736358492d6d299e2589feac2524",
+    "pixels_sha256": "3398ca972eaab19f8331f080d8161d928db87693d1ed5c8a94381d350828a462",
+    "shape": [
+      512,
+      512
+    ]
+  },
+  {
+    "name": "barbara",
+    "url": "https://webpages.tuni.fi/foi/GCF-BM3D/images/barbara.png",
+    "file_sha256": "764b8a2748cc7ad381cccc047c5e512cb528c197ba86adb83aa339e8932e66c0",
+    "pixels_sha256": "79f36e2eeecf465a6e14b7c547969bb8c3bf5ab8e832205b95ba040fe012e927",
+    "shape": [
+      512,
+      512
+    ]
+  },
+  {
+    "name": "house",
+    "url": "https://webpages.tuni.fi/foi/GCF-BM3D/images/house.png",
+    "file_sha256": "576b2b3b6ff4d7e6c8ddccb0df645774f9b986c81219c28e16ba1935990a0b29",
+    "pixels_sha256": "89f9a4126518c21d8ef8920c632e738b8a8e8b9513b2a52703c2e3d3b01c8202",
+    "shape": [
+      256,
+      256
+    ]
+  },
+  {
+    "name": "image_F16_512rgb",
+    "url": "https://webpages.tuni.fi/foi/GCF-BM3D/images/image_F16_512rgb.png",
+    "file_sha256": "406a056d01b374aa7bf92f5e3de02e9740aabb91c7399b5bf5dbcd5696875659",
+    "pixels_sha256": "c9ca18e8a90f4c9d045fdb27e034bd7991a7576974920c9ff7ee16cd3cadbd6d",
+    "shape": [
+      512,
+      512,
+      3
+    ]
+  },
+  {
+    "name": "image_Lena512rgb",
+    "url": "https://webpages.tuni.fi/foi/GCF-BM3D/images/image_Lena512rgb.png",
+    "file_sha256": "ab0642b305fe54290a0db041b2c007e78bb94584e367520b98eec0799f45c975",
+    "pixels_sha256": "01f8ff0e23a809255ae52a9857a7aeb0f89d92610205fef29c36c3d359ac3339",
+    "shape": [
+      512,
+      512,
+      3
+    ]
+  },
+  {
+    "name": "image_Baboon512rgb",
+    "url": "https://webpages.tuni.fi/foi/GCF-BM3D/images/image_Baboon512rgb.png",
+    "file_sha256": "3714ba077446c372241027cc672f4c32749f95089ffbc0188398e39246e1a440",
+    "pixels_sha256": "526f7c8cc1eea030e4417c189920223fb5b3e59317dbca2118f4832f72f97ef2",
+    "shape": [
+      512,
+      512,
+      3
+    ]
+  }
+]

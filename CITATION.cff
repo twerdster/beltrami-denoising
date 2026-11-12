@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite the relevant paper or thesis listed in README.md when using this software."
+title: "Beltrami denoising: patch-space flow and Deep Patch-Beltrami"
+type: software
+version: 1.0.0
+date-released: 2026-11-12
+authors:
+  - family-names: Wetzler
+    given-names: Aaron
+repository-code: "https://github.com/twerdster/beltrami-denoising"
+url: "https://github.com/twerdster/beltrami-denoising"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Wetzler
+      given-names: Aaron
+    - family-names: Kimmel
+      given-names: Ron
+  title: "Efficient Beltrami Flow in Patch-Space"
+  collection-title: "Scale Space and Variational Methods in Computer Vision (SSVM 2011)"
+  year: 2012
+  doi: "10.1007/978-3-642-24785-9_12"
+  start: 134
+  end: 143
+  publisher:
+    name: Springer

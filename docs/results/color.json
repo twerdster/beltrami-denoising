@@ -1,0 +1,50 @@
+[
+  {
+    "method": "color",
+    "image": "image_F16_512rgb",
+    "sigma": 20,
+    "paper_psnr_db": 31.51,
+    "psnr_db": 31.50642635263756,
+    "difference_db": -0.0035736473624403686,
+    "matches_published": true,
+    "beta": 5571.375176931158,
+    "alpha": 0.4573951190815632,
+    "iterations": 10,
+    "radius": 3,
+    "seconds": 0.11101417601457797,
+    "parameters_fitted": false,
+    "finite": true
+  },
+  {
+    "method": "color",
+    "image": "image_Lena512rgb",
+    "sigma": 30,
+    "paper_psnr_db": 29.54,
+    "psnr_db": 29.54391144290938,
+    "difference_db": 0.003911442909380725,
+    "matches_published": true,
+    "beta": 12827.693531308993,
+    "alpha": 0.4437343683621713,
+    "iterations": 10,
+    "radius": 3,
+    "seconds": 0.10251470198272727,
+    "parameters_fitted": false,
+    "finite": true
+  },
+  {
+    "method": "color",
+    "image": "image_Baboon512rgb",
+    "sigma": 50,
+    "paper_psnr_db": 21.43,
+    "psnr_db": 21.426644903719897,
+    "difference_db": -0.003355096280102998,
+    "matches_published": true,
+    "beta": 29755.721606601383,
+    "alpha": 0.4806143176538562,
+    "iterations": 10,
+    "radius": 3,
+    "seconds": 0.09398214798420668,
+    "parameters_fitted": false,
+    "finite": true
+  }
+]
