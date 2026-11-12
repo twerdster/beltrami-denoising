@@ -97,9 +97,18 @@ replicated derivatives, zero patch boundaries and exact temporal halos.
 The historical double-precision Python scores are separate from float32
 Metal fidelity; do not transfer their table claim without rerunning it.
 
-## README presentation (2026-11-12)
+## Documentation maintenance
 
-The README adds factual language, platform and existing-license badges while
-preserving the original demonstration figures and all runtime, reproduction,
-validation and attribution details. Keep badge claims aligned with these docs;
-a presentation-only update does not establish a new build or runtime result.
+Read SUMMARY.md, then this file, README, linked setup/validation records and
+relevant source before revising claims. Write concrete inputs, operations and
+outputs; keep current implementation, historical aims and recorded evidence
+separate. Label synthetic/untrained figures and schematics. Keep metric units,
+implementation, hardware, sample count and measurement scope with the claim.
+Source inspection or file export does not establish numerical execution or
+training. Preserve original attribution, licenses and validation limitations.
+
+Rebuild distributions when README metadata or bundled guides change; compare
+installed documentation with source. For substantial prose revisions, request
+an actual Claude review if directed, verify its factual suggestions and review
+the revision again. Never claim a review or runtime check that did not complete.
+Review and synchronize both context files before every commit.

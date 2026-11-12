@@ -1,26 +1,36 @@
 # Beltrami denoising
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
-[![Platforms: Linux and iOS 18+](https://img.shields.io/badge/platform-Linux%20%7C%20iOS%2018%2B-555555)](ios/README.md)
+[![Python: Linux; app: iOS 18+](https://img.shields.io/badge/Python-Linux%20%7C%20app%3A%20iOS%2018%2B-555555)](ios/README.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ![Patch-Beltrami running on an iPhone 12](docs/images/ios-demo.png)
 
-Python implementations and reproducible experiments for **Efficient Beltrami
-Flow in Patch-Space** and the **Deep Patch-Beltrami** models from Aaron Wetzler's
-2017 PhD thesis. Runs on Linux with NumPy/SciPy; neural inference uses PyTorch.
-MATLAB and Caffe are not required.
+This package filters grayscale and RGB images with Beltrami flow, applies a
+related local-surface update to 3D point arrays, and runs the original Deep
+Patch-Beltrami checkpoints through PyTorch. It was developed to make the
+experiments in **Efficient Beltrami Flow in Patch-Space** and Aaron Wetzler's
+2017 thesis executable without MATLAB or Caffe. Linux is the recorded Python
+validation environment; the separate iOS implementation uses Metal.
 
-![Patch-Beltrami denoising of a procedural image](docs/images/denoising-demo.png)
+![Python Patch-Beltrami output on a procedural image](docs/images/denoising-demo.png)
+
+The first figure contains a physical-phone app capture. This second figure
+shows the Python demo; both use generated images with known clean references.
 
 ## iPhone app
 
-A native SwiftUI app processes grayscale and RGB images with optimized Metal
-kernels, full-resolution photo import and a draggable before/after view.
-On the tested **iPhone 12**, 256×256 grayscale / 40 iterations took **16.44 ms**
-(median of three warm runs). Exact tiling supports larger images within a
-192 MiB GPU workspace budget; a 4032×3024 grayscale check completed without
-resizing. Latency depends on image size and iteration count.
+A SwiftUI app processes grayscale and RGB images with float32 Metal kernels,
+full-resolution photo import and a draggable input/output view.
+The [iPhone 12 record](ios/benchmarks/iphone12.json) reports **16.44 ms** for
+256×256 grayscale, radius 2, 40 iterations (median of three warm filter runs;
+Release build, iOS 18.0.1).
+This excludes photo import and display and is not a sustained-throughput result.
+Context-preserving tiling supports larger images within a
+192 MiB GPU workspace budget; this excludes CPU image arrays and display
+buffers, so it is not a total-memory bound. The same record includes one
+4032×3024 grayscale case, radius 2, at five iterations without resizing. Latency also
+depends on patch radius and iteration count.
 
 Open `ios/BeltramiApp.xcodeproj` in **Xcode 16.1+**, choose your Apple signing
 team and an **iOS 18+** iPhone, then Run. No model downloads are needed.
@@ -34,9 +44,8 @@ TEAM_ID=YOUR_TEAM_ID ios/scripts/build_ios.sh
 [Numerical validation](ios/VALIDATION.md) ·
 [Device benchmark record](ios/benchmarks/iphone12.json)
 
-The screenshot and images above come from the app on a physical iPhone and a
-procedural sample. The Metal port is float32; the historical paper's
-separate double-precision reproduction remains available below.
+The Metal port is float32; the historical paper's separate double-precision
+reproduction remains available below.
 
 ## Quick start
 
@@ -53,8 +62,20 @@ python -m pip install -e .
 beltrami demo
 ```
 
-The demo writes a comparison PNG, full-precision arrays and metrics to
-`results/demo/`. Its synthetic image improves from **24.65 to 38.84 dB**.
+The demo writes a comparison PNG, floating-point arrays and a JSON metric
+report to `results/demo/`. It uses a procedural image and a fixed noise seed;
+the displayed PSNR is specific to that example, rather than a benchmark mean.
+
+## Implementation
+
+The classical image update computes backward differences, sums their products
+over square patches, forms the local metric and its inverse square root,
+then applies a forward-divergence flow update. Replicated derivative boundaries
+and zero-padded, unnormalized patch sums are part of the numerical contract.
+The [Python implementation](src/beltrami/classical.py) offers integral-image,
+direct-convolution and separable patch sums. Metal provides a float32 implementation; its reference checks are separate from the double-precision paper
+experiment. The optional Deep implementation executes the saved five-stage
+graphs rather than training new weights.
 
 ## Reproduce the image paper
 
@@ -68,14 +89,15 @@ paper's printed values. Reports are saved under `results/ssvm/`. CPU execution
 is sufficient; the complete suite includes a parameter search and takes longer
 than the demo.
 
-| Experiment | Verified results | Acceptance |
+| Experiment | Matches at printed precision | Acceptance |
 | --- | ---: | --- |
-| Table 1: patch size / iteration study | 20 / 20 | All round to the published two decimals |
+| Table 1: patch size / iteration study (oracle beta) | 20 / 20 | All round to the published two decimals |
 | Table 3: Patch-Beltrami, regular Beltrami and NLM | 36 / 36 | All round to the published two decimals |
 | Three color examples | 3 / 3 | All round to the quoted two decimals |
 
-Table 1 optimizes beta separately against the **clean reference**, as specified
-in its caption. It is an oracle study. Table 3 and the color examples use fixed
+Table 1 optimizes beta against the **clean reference** for each image, noise
+level and iteration/patch-size setting, as specified in its caption. It is an
+oracle study. Table 3 and the color examples use fixed
 historical parameters, with no new fitting. The recovered legacy noise sequence
 has float32 quantization uncertainty; agreement at printed precision does not
 imply bit-identical recovery of the original random doubles.
@@ -103,7 +125,10 @@ The command downloads the original learned tensors, a noise-only fixture and
 the 68 public BSD68 images. It verifies all file hashes, reconstructs all
 **544 original noisy inputs** exactly, performs inference, and checks all eight
 means in **thesis Table 4.6**. Downloads are about 400 MiB plus the clean PNGs.
-CUDA is selected when available; `--device cpu` runs without a GPU.
+The [saved record](docs/results/deep-bsd68.json) was produced with PyTorch on
+CUDA. `--device cpu` runs without a GPU; a rerun checks its own printed-precision
+agreement. The standalone [Deep Patch-Beltrami package](https://github.com/twerdster/deep-patch-beltrami)
+provides the same original-model experiment under a separate CLI and cache.
 
 | Noise sigma | 5 | 10 | 15 | 20 | 25 | 30 | 40 | 50 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -111,12 +136,13 @@ CUDA is selected when available; `--device cpu` runs without a GPU.
 
 These are the saved **40,000-step** checkpoints, although the thesis describes
 100,000 steps. The historical grayscale wrapper's intensity offsets are
-preserved. No training is needed. The portrait table requires separately
-supplied data; the original portraits are not distributed.
+preserved. This command performs inference without retraining. The portrait
+table requires separately supplied data; the original portraits are not distributed.
 
 [Deep reproduction guide](docs/deep-reproduction.md) covers input conventions,
 offline use, smoke tests, per-image validation, model provenance and the
-100-versus-92 portrait discrepancy. The deep method is cited to the thesis;
+portrait discrepancy (the caption says 92 images; recovered results use 100).
+The deep method is cited to the thesis;
 this repository does not identify a separate peer-reviewed Deep Beltrami paper.
 
 ## Denoise your own data
@@ -133,8 +159,12 @@ beltrami-deep denoise noisy.png filtered-deep.png --sigma 25
 beltrami-points noisy-points.npy filtered-points.npy --noise-std 0.01
 ```
 
-Classical beta is a method parameter, not the noise standard deviation. Choose
-it for the intended application. `.npy` output retains floating-point values;
+Classical beta is a method parameter, not the noise standard deviation.
+The [reproduction guide](docs/REPRODUCIBILITY.md) explains historical parameter
+selection. In the API, `ws` is the CLI patch `--radius`; `alpha` controls the
+step size. Deep inference accepts only sigma 5, 10, 15, 20, 25, 30, 40 or 50;
+other values are rejected. RGB uses three independent grayscale passes.
+`.npy` output retains floating-point values;
 PNG previews are clipped and rounded for display. The library API is also
 available:
 
@@ -161,13 +191,16 @@ python -m pytest
 Tests cover numerical reference arrays, boundary conditions, noise ordering,
 input integrity and command-line behavior. Full paper and thesis experiments
 are explicit commands, separate from the quick test suite.
+These fixtures and command checks do not establish correctness for every
+image, parameter or device. Table 3 executes the included NLM implementation;
+its output is distinct from merely rescoring an archived baseline.
 The [verified result files](docs/results/) retain all 59 classical scores and
 all 544 Deep BSD68 case scores, input hashes and published-precision checks.
 
 [Reproducibility notes](docs/REPRODUCIBILITY.md) describe precision, clipping,
 parameter selection, historical inconsistencies and the limits of comparison
-with modern denoisers. This release focuses on the Beltrami methods. External
-modern architectures and weights are obtained from their respective projects.
+with modern denoisers. The public package does not bundle the external
+modern-denoiser comparison workspace discussed in those notes.
 
 ## Citation
 

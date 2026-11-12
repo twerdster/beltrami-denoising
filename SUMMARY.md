@@ -112,9 +112,19 @@ described in the main README and their component documentation.
   development team, device identifier, generated fixtures or build binaries
   are committed. Source code and procedural demos are MIT licensed.
 
-## README presentation (2026-11-12)
+## Maintainer documentation — 2026-11-12
 
-The README adds factual language, platform and existing-license badges while
-preserving the original demonstration figures and all runtime, reproduction,
-validation and attribution details. Keep badge claims aligned with these docs;
-a presentation-only update does not establish a new build or runtime result.
+The README now describes the image/point-array inputs, output formats and
+finite-difference operator chain before presenting experiment results. It
+separates Python/Linux from the iOS Metal app, classical double precision
+from native float32, oracle Table 1 parameter fitting from fixed-parameter
+comparisons, and synthetic examples from benchmark means. Phone timing names
+radius, iteration count, device, OS, build and measurement boundaries. The
+192 MiB GPU workspace does not bound total app memory. Deep sigma choices,
+independent RGB channel passes and the standalone Deep package are explicit.
+
+Actual Claude reviews of the draft and substantial revision completed;
+suggestions were checked against source and saved JSON. Markdown/resources
+and wheel metadata are checked for this documentation pass. Numerical source,
+models, release assets and saved metrics are unchanged; no new benchmark or
+training result is claimed. Existing citations and MIT/external-data terms remain.
