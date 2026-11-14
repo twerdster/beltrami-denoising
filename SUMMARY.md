@@ -128,3 +128,15 @@ suggestions were checked against source and saved JSON. Markdown/resources
 and wheel metadata are checked for this documentation pass. Numerical source,
 models, release assets and saved metrics are unchanged; no new benchmark or
 training result is claimed. Existing citations and MIT/external-data terms remain.
+
+## Modern update navigation — 2026-11-14
+
+The root README adds only a local New! badge and the
+“Updated and ported for modern hardware” link. The existing README body is
+retained; `updated/README.md` briefly identifies the retained implementation,
+new code, repairs and evidence, then links to the existing setup and results.
+Implementation paths, numerical results and published release assets are unchanged.
+
+A private wheel rebuild/install compared the README metadata and 20 source/resource
+files with this checkout. No project runtime dependencies were installed; no numerical runs or release
+uploads were performed for this navigation change.

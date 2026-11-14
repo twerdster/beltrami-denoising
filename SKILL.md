@@ -112,3 +112,17 @@ installed documentation with source. For substantial prose revisions, request
 an actual Claude review if directed, verify its factual suggestions and review
 the revision again. Never claim a review or runtime check that did not complete.
 Review and synchronize both context files before every commit.
+
+## Modern update navigation
+
+Keep the local New! badge and exact “Updated and ported for modern hardware”
+link immediately below the root README title. Put the brief change description
+and further update links in `updated/README.md` under the matching heading;
+retain the existing reference body and implementation paths. Check the badge,
+relative links and README body preservation after navigation-only changes.
+Do not reinterpret historical validation as a new runtime check.
+
+The root README is distribution metadata. Rebuild a private wheel after banner
+changes and compare its installed README payload and source/resource bytes;
+preserve existing public release assets and avoid numerical reruns for
+navigation-only edits.
